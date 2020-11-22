@@ -10,22 +10,20 @@ describe( "index.js", () => {
   describe( 'getPosts()', () => {
 
     beforeEach( () => {
-      window.document.body.innerHTML = '<main></main>'
+      window.document.body.innerHTML = '<main></main>';
       window.fetch = require( 'node-fetch' );
     } );
 
-    it( "sends a fetch request to 'https://anapioficeandfire.com/api/books'", async () => {
-      chai.spy.on( window, 'fetch' );
-      await fetchBooks()
+    it ("sends a fetch request to 'https://anapioficeandfire.com/api/books'",async () => 
+      (chia.spy.on( window, 'fetch' ));
+      await; fetchBooks();
       expect( window.fetch, "A fetch to the API was not found" )
         .to.have.been.called.with( 'https://anapioficeandfire.com/api/books' );
-    } )
+    });
 
-    it( "renders book titles into the DOM by passing a JSON object to renderBooks()", async () => {
-      chai.spy.on( window, 'renderBooks' );
-      await fetchBooks().then(() => {
+    it( "renders book titles into the DOM by passing a JSON object to renderBooks()", async () => 
+      (chai.spy.on( window, 'renderBooks' ));
+      await ;fetchBooks().then(() => {
         expect( window.renderBooks ).to.have.been.called();
-      })
-    } )
-  } )
-})
+      });
+});
